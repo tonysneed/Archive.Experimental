@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HelloAspNet5.ConsoleApp", "src\HelloAspNet5.ConsoleApp\HelloAspNet5.ConsoleApp.kproj", "{3A413DAF-EF48-41B2-9841-E76D499D50D7}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "HelloAspNet5.Web", "src\HelloAspNet5.Web\HelloAspNet5.Web.kproj", "{B7F58EE7-27B2-46CA-9861-38941B7A0E25}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{3A413DAF-EF48-41B2-9841-E76D499D50D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A413DAF-EF48-41B2-9841-E76D499D50D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A413DAF-EF48-41B2-9841-E76D499D50D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7F58EE7-27B2-46CA-9861-38941B7A0E25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7F58EE7-27B2-46CA-9861-38941B7A0E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7F58EE7-27B2-46CA-9861-38941B7A0E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7F58EE7-27B2-46CA-9861-38941B7A0E25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,5 +42,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A68E76B7-C4D7-47C2-8946-55DF8BAE7093} = {E4C50B66-DA28-47E6-9A2F-9A7E2DF7539F}
 		{3A413DAF-EF48-41B2-9841-E76D499D50D7} = {E4C50B66-DA28-47E6-9A2F-9A7E2DF7539F}
+		{B7F58EE7-27B2-46CA-9861-38941B7A0E25} = {E4C50B66-DA28-47E6-9A2F-9A7E2DF7539F}
 	EndGlobalSection
 EndGlobal
