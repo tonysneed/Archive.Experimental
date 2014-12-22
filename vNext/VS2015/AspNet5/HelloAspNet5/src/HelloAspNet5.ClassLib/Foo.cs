@@ -8,5 +8,10 @@ namespace HelloAspNet5.ClassLib
         {
 
         }
+
+        public override string ToString()
+        {
+            return "This is Foo.";
+        }
     }
 }
