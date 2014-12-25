@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 using NTierEf7.Entities;
 using NTierEf72.Entities;
 
-namespace NTierEf72.Client
+namespace NTierEf7.Client
 {
     class Program
     {
@@ -63,9 +63,6 @@ namespace NTierEf72.Client
                         new OrderDetail { ProductId = 4, Quantity = 40, UnitPrice = 40 }
                     }
             };
-            newOrder.OrderDetails.ElementAt(0).Order = newOrder;
-            newOrder.OrderDetails.ElementAt(1).Order = newOrder;
-            newOrder.OrderDetails.ElementAt(2).Order = newOrder;
             var order = CreateOrder(client, formatter, newOrder);
             PrintOrderWithDetails(order);
 
@@ -73,6 +70,9 @@ namespace NTierEf72.Client
             Console.WriteLine("\nPress Enter to update order details");
             Console.ReadLine();
             order.OrderDate = order.OrderDate.GetValueOrDefault().AddDays(1);
+            //order.OrderDetails.ElementAt(0).UnitPrice++;
+            //order.OrderDetails.Remove(order.OrderDetails.ElementAt(1));
+            //order.OrderDetails.Add(new OrderDetail { ProductId = 5, Quantity = 50, UnitPrice = 50 });
             order = UpdateOrder(client, formatter, order);
             PrintOrderWithDetails(order);
 
@@ -95,7 +95,7 @@ namespace NTierEf72.Client
         private static Order CreateOrder(HttpClient client, MediaTypeFormatter formatter, Order order)
         {
             string request = "orders";
-            var response = client.PostAsync<Order>(request, order, formatter).Result;
+            var response = client.PostAsync(request, order, formatter).Result;
             response.EnsureSuccessStatusCode();
             var result = response.Content.ReadAsAsync<Order>(new[] { formatter }).Result;
             return result;
@@ -104,7 +104,7 @@ namespace NTierEf72.Client
         private static Order UpdateOrder(HttpClient client, MediaTypeFormatter formatter, Order order)
         {
             string request = "Orders";
-            var response = client.PutAsync<Order>(request, order, formatter).Result;
+            var response = client.PutAsync(request, order, formatter).Result;
             response.EnsureSuccessStatusCode();
             var result = response.Content.ReadAsAsync<Order>(new[] { formatter }).Result;
             return result;

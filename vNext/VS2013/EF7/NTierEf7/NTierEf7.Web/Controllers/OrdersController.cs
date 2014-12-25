@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Microsoft.Data.Entity.Update;
+using NTierEf7.Entities;
 using NTierEf7.Web.Models;
 using NTierEf72.Entities;
 
@@ -19,6 +20,7 @@ namespace NTierEf7.Web.Controllers
         {
             var orders = await _dbContext.Orders
                 .Include(o => o.Customer)
+                // EF7: Multi-level Include not yet supported
                 //.Include("OrderDetails.Product")
                 .Where(o => o.CustomerId == customerId)
                 .ToListAsync();
@@ -31,6 +33,7 @@ namespace NTierEf7.Web.Controllers
         {
             var order = await _dbContext.Orders
                 .Include(o => o.Customer)
+                // EF7: Multi-level Include not yet supported
                 //.Include("OrderDetails.Product")
                 .SingleOrDefaultAsync(o => o.OrderId == id);
             if (order == null) return NotFound();
@@ -42,12 +45,16 @@ namespace NTierEf7.Web.Controllers
         public async Task<IHttpActionResult> PutOrder(Order order)
         {
             if (!ModelState.IsValid)
-            {
                 return BadRequest(ModelState);
-            }
 
+            // EF7: Entry state API replaced by DbSet.Update
             //_dbContext.Entry(order).State = EntityState.Modified;
             _dbContext.Orders.Update(order);
+
+            // EF7: Add, Update and Remove DbSet methods accept arrays
+            //_dbContext.OrderDetails.Add(addedDetails.ToArray());
+            //_dbContext.OrderDetails.Update(updatedDetails.ToArray());
+            //_dbContext.OrderDetails.Remove(deletedDetails.ToArray());
 
             try
             {
@@ -56,9 +63,7 @@ namespace NTierEf7.Web.Controllers
             catch (DbUpdateConcurrencyException)
             {
                 if (!OrderExists(order.OrderId))
-                {
                     return NotFound();
-                }
                 throw;
             }
 
@@ -70,11 +75,13 @@ namespace NTierEf7.Web.Controllers
         public async Task<IHttpActionResult> PostOrder(Order order)
         {
             if (!ModelState.IsValid)
-            {
                 return BadRequest(ModelState);
-            }
 
             _dbContext.Orders.Add(order);
+
+            // EF7: Adding parent does not add children
+            _dbContext.OrderDetails.Add(order.OrderDetails.ToArray());
+
             await _dbContext.SaveChangesAsync();
 
             return CreatedAtRoute("DefaultApi", 
@@ -103,9 +110,7 @@ namespace NTierEf7.Web.Controllers
         protected override void Dispose(bool disposing)
         {
             if (disposing)
-            {
                 _dbContext.Dispose();
-            }
             base.Dispose(disposing);
         }
 
