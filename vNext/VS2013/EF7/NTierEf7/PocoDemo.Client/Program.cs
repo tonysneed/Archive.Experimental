@@ -24,7 +24,7 @@ namespace PocoDemo.Client
             // Create an http client with service base address
             var client = new HttpClient
             {
-                BaseAddress = new Uri("http://localhost:51247/api/"),
+                BaseAddress = new Uri("http://localhost:51246/api/"),
             };
 
             // Set request accept header
