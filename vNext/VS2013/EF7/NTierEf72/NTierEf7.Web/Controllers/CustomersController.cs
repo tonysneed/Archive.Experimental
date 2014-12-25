@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
+using NTierEf7.Entities;
 using NTierEf7.Web.Models;
 using NTierEf72.Entities;
 

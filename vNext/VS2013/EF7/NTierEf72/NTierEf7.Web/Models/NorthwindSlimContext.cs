@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.Entity;
+using NTierEf7.Entities;
 using NTierEf72.Entities;
 
 namespace NTierEf7.Web.Models

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using NTierEf7.Entities;
 
 namespace NTierEf72.Entities
 {

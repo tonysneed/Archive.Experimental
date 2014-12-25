@@ -340,9 +340,9 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NTierEf72.Entities\NTierEf72.Entities.csproj">
+    <ProjectReference Include="..\NTierEf7.Entities\NTierEf7.Entities.csproj">
       <Project>{6bb60cf2-8600-4d23-a8a8-80efdb16a72d}</Project>
-      <Name>NTierEf72.Entities</Name>
+      <Name>NTierEf7.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

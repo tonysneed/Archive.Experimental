@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace NTierEf72.Entities
+namespace NTierEf7.Entities
 {
     public partial class Product
     {

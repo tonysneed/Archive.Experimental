@@ -1,4 +1,6 @@
-namespace NTierEf72.Entities
+using NTierEf72.Entities;
+
+namespace NTierEf7.Entities
 {
     public partial class OrderDetail
     {

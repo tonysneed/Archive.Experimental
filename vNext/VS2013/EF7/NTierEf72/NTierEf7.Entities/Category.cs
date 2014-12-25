@@ -1,6 +1,7 @@
 using System.Collections.Generic;
+using NTierEf72.Entities;
 
-namespace NTierEf72.Entities
+namespace NTierEf7.Entities
 {
     public partial class Category
     {
