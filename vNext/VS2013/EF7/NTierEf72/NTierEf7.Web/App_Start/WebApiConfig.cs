@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web.Http;
+using Newtonsoft.Json;
 
 namespace NTierEf7.Web
 {
@@ -9,7 +8,9 @@ namespace NTierEf7.Web
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
+            // Handle cyclical references for json
+            config.Formatters.JsonFormatter.SerializerSettings.
+                PreserveReferencesHandling = PreserveReferencesHandling.All;
 
             // Web API routes
             config.MapHttpAttributeRoutes();

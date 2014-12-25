@@ -1,4 +1,4 @@
-namespace NTierEf7.Web.Models
+namespace NTierEf72.Entities
 {
     public partial class OrderDetail
     {

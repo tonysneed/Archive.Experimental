@@ -8,16 +8,17 @@ using NTierEf72.Entities;
 
 namespace NTierEf7.Web.Controllers
 {
-    public class CustomersController : ApiController
+    public class ProductsController : ApiController
     {
-        // GET api/customers
-        [ResponseType(typeof(IEnumerable<Customer>))]
+        // GET api/products
+        [ResponseType(typeof(IEnumerable<Product>))]
         public async Task<IHttpActionResult> Get()
         {
             using (var dbContext = new NorthwindSlimContext())
             {
-                var products = await dbContext.Customers
-                    .OrderBy(p => p.CustomerId)
+                var products = await dbContext.Products
+                    .Include(p => p.Category)
+                    .OrderBy(p => p.ProductName)
                     .ToListAsync();
                 return Ok(products);
             }

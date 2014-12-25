@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace NTierEf7.Web.Models
+namespace NTierEf72.Entities
 {
     public partial class Order
     {
