@@ -10,6 +10,7 @@ using Microsoft.Data.Entity.Query;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.DependencyInjection.Fallback;
 using Microsoft.Framework.Logging;
+using Microsoft.Framework.OptionsModel;
 
 namespace HelloEf7.TraditionalDotNet
 {
@@ -19,6 +20,9 @@ namespace HelloEf7.TraditionalDotNet
         {
             using (var context = new NorthwindSlim())
             {
+                // Log to the console
+                context.LogToConsole();
+
                 // Get product
                 Product product = GetProduct(context);
                 PrintProduct(product);
@@ -78,17 +82,6 @@ namespace HelloEf7.TraditionalDotNet
         {
             EntityEntry<Product> entry = context.Entry(product);
             Console.WriteLine("Entity State: {0}", entry.State);
-        }
-
-        private static IServiceProvider ConfigServiceProvider()
-        {
-            var services = new ServiceCollection();
-            ILoggerFactory loggerFactory = new LoggerFactory();
-            loggerFactory.AddProvider(new DiagnosticsLoggerProvider(
-                new SourceSwitch("SourceSwitch", "Verbose"), new ConsoleTraceListener()));
-            services.AddInstance(loggerFactory);
-            var serviceProvider = services.BuildServiceProvider();
-            return serviceProvider;
         }
     }
 }
