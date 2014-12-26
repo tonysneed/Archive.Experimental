@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Http;
 using Microsoft.Framework.DependencyInjection;
+using Microsoft.Framework.Logging;
 
 namespace HelloAspNet5.Web
 {
@@ -10,6 +11,11 @@ namespace HelloAspNet5.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            //services.Configure<ILoggerFactory>(options =>
+            //{
+            //    options.AddProvider();
+            //});
+            //services.ConfigureOptions<ILoggerFactory>().AddTransient<>()
         }
 
         public void Configure(IApplicationBuilder app)
