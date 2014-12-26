@@ -1,7 +1,12 @@
 ﻿{
     "Data": {
-        "DefaultConnection": { 
+        "DefaultConnection": {
             "ConnectionString": "Server=(local)\\sqlexpress;Database=NorthwindSlim;Trusted_Connection=True;"
+        }
+    },
+    "EntityFramework": {
+        "NorthwindSlimContext": {
+            "ConnectionStringKey": "Data:DefaultConnection:ConnectionString"
         }
     }
 }

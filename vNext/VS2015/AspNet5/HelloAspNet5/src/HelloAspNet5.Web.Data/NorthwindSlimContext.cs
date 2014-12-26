@@ -14,7 +14,6 @@ namespace HelloAspNet5.Web.Data
         protected override void OnConfiguring(DbContextOptions options)
         {
             options.UseSqlServer();
-            //options.UseSqlServer(@"data source=.\sqlexpress;initial catalog=NorthwindSlim;integrated security=True");
         }
     }
 }
