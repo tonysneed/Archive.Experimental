@@ -61,6 +61,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Framework.Logging.1.0.0-rc1-10665\lib\net45\Microsoft.Framework.Logging.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Framework.Logging.Console">
+      <HintPath>..\packages\Microsoft.Framework.Logging.Console.1.0.0-rc1-10665\lib\net45\Microsoft.Framework.Logging.Console.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Framework.Logging.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Framework.Logging.Interfaces.1.0.0-rc1-10665\lib\net45\Microsoft.Framework.Logging.Interfaces.dll</HintPath>

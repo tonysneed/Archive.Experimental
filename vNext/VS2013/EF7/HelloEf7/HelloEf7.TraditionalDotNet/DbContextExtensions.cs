@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Diagnostics;
 using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Infrastructure;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
+using Microsoft.Framework.Logging.Console;
 
 namespace HelloEf7.TraditionalDotNet
 {
@@ -13,9 +13,7 @@ namespace HelloEf7.TraditionalDotNet
         {
             IServiceProvider contextServices = ((IDbContextServices)context).ScopedServiceProvider;
             var loggerFactory = contextServices.GetRequiredService<ILoggerFactory>();
-            loggerFactory.AddProvider(new DiagnosticsLoggerProvider
-                (new SourceSwitch("SourceSwitch", "Verbose"),
-                new ConsoleTraceListener()));
+            loggerFactory.AddConsole(LogLevel.Verbose);
         }
     }
 }
