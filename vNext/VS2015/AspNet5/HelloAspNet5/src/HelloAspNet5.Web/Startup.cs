@@ -1,25 +1,37 @@
 ﻿using System;
 using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Http;
+using Microsoft.AspNet.Hosting;
+using Microsoft.Framework.ConfigurationModel;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
+using Microsoft.Framework.Logging.Console;
+using HelloAspNet5.Web.Data;
 
 namespace HelloAspNet5.Web
 {
     public class Startup
     {
-        public void ConfigureServices(IServiceCollection services)
+        public Startup(IHostingEnvironment env)
         {
-            services.AddMvc();
-            //services.Configure<ILoggerFactory>(options =>
-            //{
-            //    options.AddProvider();
-            //});
-            //services.ConfigureOptions<ILoggerFactory>().AddTransient<>()
+            Configuration = new Configuration()
+                .AddJsonFile("config.json")
+                .AddEnvironmentVariables();
         }
 
-        public void Configure(IApplicationBuilder app)
+        public IConfiguration Configuration { get; set; }
+
+        public void ConfigureServices(IServiceCollection services)
         {
+            services.AddEntityFramework(Configuration)
+                .AddSqlServer()
+                .AddDbContext<NorthwindSlimContext>();
+
+            services.AddMvc();
+        }
+
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerfactory)
+        {
+            loggerfactory.AddConsole();
             app.UseMvc();
             app.UseWelcomePage();
         }

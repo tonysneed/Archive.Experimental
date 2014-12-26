@@ -13,15 +13,14 @@
         "Microsoft.AspNet.Server.IIS": "1.0.0-beta1",
         "Microsoft.AspNet.Diagnostics": "1.0.0-beta1",
         "Microsoft.AspNet.Mvc": "6.0.0-beta1",
-        "Microsoft.AspNet.Server.WebListener": "1.0.0-beta1",
+        "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta1",
+        "Microsoft.Framework.Logging.Console": "1.0.0-beta1",
+        "EntityFramework.SqlServer": "7.0.0-beta1",
         "HelloAspNet5.Web.Data": "1.0.0-*",
         "HelloAspNet5.Web.Entities": "1.0.0-*"
     },
-    "commands": {
-        "self": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --server.urls http://localhost:5000"
-    },
-    "frameworks" : {
-        "aspnet50" : { },
-        "aspnetcore50" : { }
+    "frameworks": {
+        "aspnet50": { },
+        "aspnetcore50": { }
     }
 }

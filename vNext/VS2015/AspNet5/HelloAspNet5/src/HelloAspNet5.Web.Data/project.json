@@ -1,8 +1,8 @@
 {
     "version": "1.0.0-*",
     "dependencies": {
-        "EntityFramework.SqlServer": "7.0.0-rc1-11872",
-"HelloAspNet5.Web.Entities": "1.0.0-*"
+        "EntityFramework.SqlServer": "7.0.0-beta1",
+        "HelloAspNet5.Web.Entities": "1.0.0-*"
     },
 
     "frameworks" : {
