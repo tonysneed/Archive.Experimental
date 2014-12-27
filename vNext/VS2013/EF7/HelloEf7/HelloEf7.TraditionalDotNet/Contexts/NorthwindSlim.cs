@@ -1,16 +1,9 @@
 using System;
-using System.Diagnostics;
 using System.Linq;
 using HelloEf7.TraditionalDotNet.Models;
 using Microsoft.Data.Entity;
-using Microsoft.Data.Entity.Infrastructure;
 using Microsoft.Data.Entity.Metadata;
-using Microsoft.Data.Entity.Metadata.Internal;
 using Microsoft.Data.Entity.Metadata.ModelConventions;
-using Microsoft.Data.Entity.Query;
-using Microsoft.Framework.DependencyInjection;
-using Microsoft.Framework.DependencyInjection.Fallback;
-using Microsoft.Framework.Logging;
 
 namespace HelloEf7.TraditionalDotNet.Contexts
 {
