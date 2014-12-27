@@ -6,7 +6,9 @@ using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using Microsoft.Framework.Logging.Console;
 using HelloAspNet5.Web.Data;
+using HelloAspNet5.Web.Helpers;
 using Microsoft.AspNet.Routing;
+using Microsoft.AspNet.Mvc;
 
 namespace HelloAspNet5.Web
 {
@@ -27,7 +29,12 @@ namespace HelloAspNet5.Web
                 .AddSqlServer()
                 .AddDbContext<NorthwindSlimContext>();
 
-            services.AddMvc();
+            services.AddMvc()
+                .Configure<MvcOptions>(options =>
+                {
+                    options.ConfigureJsonFormatters();
+                    options.ConfigureXmlFormatters();
+                });
             services.AddWebApiConventions();
         }
 

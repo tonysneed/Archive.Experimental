@@ -10,15 +10,16 @@
         "**.vspscc"
     ],
     "dependencies": {
-        "Microsoft.AspNet.Server.IIS": "1.0.0-beta1",
-        "Microsoft.AspNet.Diagnostics": "1.0.0-beta1",
-        "Microsoft.AspNet.Mvc": "6.0.0-beta1",
-        "Microsoft.AspNet.Mvc.WebApiCompatShim" :  "6.0.0-beta1",
-        "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta1",
-        "Microsoft.Framework.Logging.Console": "1.0.0-beta1",
-        "EntityFramework.SqlServer": "7.0.0-beta1",
+        "Microsoft.AspNet.Server.IIS": "1.0.0-rc1-*",
+        "Microsoft.AspNet.Diagnostics": "1.0.0-rc1-*",
+        "Microsoft.AspNet.Mvc": "6.0.0-rc1-*",
+        "Microsoft.AspNet.Mvc.WebApiCompatShim": "6.0.0-rc1-*",
+        "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-rc1-*",
+        "Microsoft.Framework.Logging.Console": "1.0.0-rc1-*",
+        "EntityFramework.SqlServer": "7.0.0-rc1-*",
         "HelloAspNet5.Web.Data": "1.0.0-*",
-        "HelloAspNet5.Web.Entities": "1.0.0-*"
+        "HelloAspNet5.Web.Entities": "1.0.0-*",
+        "HelloAspNet5.Web.Helpers": "1.0.0-*"
     },
     "frameworks": {
         "aspnet50": { },

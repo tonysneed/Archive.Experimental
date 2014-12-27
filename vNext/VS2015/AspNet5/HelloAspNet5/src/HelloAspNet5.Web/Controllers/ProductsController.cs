@@ -18,7 +18,7 @@ namespace HelloAspNet5.Web.Controllers
         public async Task<IActionResult> Get()
         {
             var products = await _dbContext.Products
-                //.Include(p => p.Category) // not implemented in beta1
+                .Include(p => p.Category)
                 .OrderBy(p => p.ProductName)
                 .ToListAsync();
             return Ok(products);
