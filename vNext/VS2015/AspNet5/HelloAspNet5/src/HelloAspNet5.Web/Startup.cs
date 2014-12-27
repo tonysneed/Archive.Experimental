@@ -27,6 +27,7 @@ namespace HelloAspNet5.Web
                 .AddDbContext<NorthwindSlimContext>();
 
             services.AddMvc();
+            services.AddWebApiConventions();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerfactory)
