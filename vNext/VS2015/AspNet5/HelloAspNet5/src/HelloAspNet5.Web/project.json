@@ -2,8 +2,7 @@
     "webroot": "wwwroot",
     "version": "1.0.0-*",
     "exclude": [
-        "wwwroot",
-        "controllers"
+        "wwwroot"
     ],
     "packExclude": [
         "**.kproj",

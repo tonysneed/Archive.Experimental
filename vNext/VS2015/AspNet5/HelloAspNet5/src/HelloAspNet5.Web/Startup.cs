@@ -6,6 +6,7 @@ using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using Microsoft.Framework.Logging.Console;
 using HelloAspNet5.Web.Data;
+using Microsoft.AspNet.Routing;
 
 namespace HelloAspNet5.Web
 {
@@ -33,7 +34,8 @@ namespace HelloAspNet5.Web
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerfactory)
         {
             loggerfactory.AddConsole();
-            app.UseMvc();
+            app.UseMvc(routes =>
+                routes.MapWebApiRoute("DefaultApi", "api/{controller}/{id?}"));
             app.UseWelcomePage();
         }
     }
