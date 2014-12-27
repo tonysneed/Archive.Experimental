@@ -1,9 +1,12 @@
 using System;
 using System.Diagnostics;
+using System.Linq;
 using HelloEf7.TraditionalDotNet.Models;
 using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Infrastructure;
 using Microsoft.Data.Entity.Metadata;
+using Microsoft.Data.Entity.Metadata.Internal;
+using Microsoft.Data.Entity.Metadata.ModelConventions;
 using Microsoft.Data.Entity.Query;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.DependencyInjection.Fallback;
@@ -32,9 +35,15 @@ namespace HelloEf7.TraditionalDotNet.Contexts
         {
             //foreach (var entityType in modelBuilder.Metadata.EntityTypes)
             //    Console.WriteLine(entityType.SimpleName);
-            
-            //foreach (var convention in modelBuilder.EntityTypeConventions)
-            //    Console.WriteLine(convention);
+
+            // List entity conventions
+            foreach (var convention in modelBuilder.EntityTypeConventions)
+                Console.WriteLine(convention);
+
+            // Get the properties convention
+            var propConvention = modelBuilder.EntityTypeConventions.OfType<PropertiesConvention>().Single();
+            // Only the Apply method is avail, which accepts InternalEntityBuilder
+            //propConvention.Apply();
         }
     }
 }
