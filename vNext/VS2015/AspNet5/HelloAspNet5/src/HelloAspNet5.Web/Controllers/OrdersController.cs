@@ -21,8 +21,8 @@ namespace HelloAspNet5.Web.Controllers
         public async Task<IActionResult> Get(string customerId)
         {
             var orders = await _dbContext.Orders
-                //.Include(o => o.Customer) // not supported
-                //.Include(o => o.OrderDetails) // not supported
+                //.Include(o => o.Customer) // not implemented in beta1
+                //.Include(o => o.OrderDetails) // not implemented in beta1
                 // EF7: Multi-level Include not yet supported
                 //.Include("OrderDetails.Product")
                 .Where(o => o.CustomerId == customerId)
@@ -34,7 +34,7 @@ namespace HelloAspNet5.Web.Controllers
         public async Task<IActionResult> GetOrder(int id)
         {
             var order = await _dbContext.Orders
-                //.Include(o => o.Customer)
+                //.Include(o => o.Customer) // not implemented in beta1
                 // EF7: Multi-level Include not yet supported
                 //.Include("OrderDetails.Product")
                 .SingleOrDefaultAsync(o => o.OrderId == id);
@@ -93,8 +93,8 @@ namespace HelloAspNet5.Web.Controllers
         public async Task<IActionResult> DeleteOrder(int id)
         {
             var order = await _dbContext.Orders
-                //.Include(o => o.Customer)
-                //.Include(o => o.OrderDetails)
+                //.Include(o => o.Customer) // not implemented in beta1
+                //.Include(o => o.OrderDetails) // not implemented in beta1
                 .SingleOrDefaultAsync(o => o.OrderId == id);
             if (order == null) return Ok();
 
@@ -113,7 +113,7 @@ namespace HelloAspNet5.Web.Controllers
         }
 
         // TODO: Replace DeleteOrder with DeleteOrder2,
-        // when Include is implemented
+        // after upgrading EF to latest version.
         public async Task<IActionResult> DeleteOrder2(int id)
         {
             var order = await _dbContext.Orders
