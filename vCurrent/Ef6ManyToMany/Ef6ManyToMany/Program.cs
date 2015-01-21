@@ -53,6 +53,9 @@ namespace Ef6ManyToMany
                     // Add territory to nav prop collection
                     employee.Territories.Add(territory);
                     Debug.Assert(context.Entry(territory).State == EntityState.Added);
+
+                    // NOTE: Must set state to unchanged
+                    context.Entry(territory).State = EntityState.Unchanged;
                 }
                 else
                 {
