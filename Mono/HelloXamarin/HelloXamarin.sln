@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloXamarin", "HelloXamarin\HelloXamarin.csproj", "{CF5E357A-6C14-4A60-A74A-078829B5EC84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF5E357A-6C14-4A60-A74A-078829B5EC84}.Debug|x86.ActiveCfg = Debug|x86
+		{CF5E357A-6C14-4A60-A74A-078829B5EC84}.Debug|x86.Build.0 = Debug|x86
+		{CF5E357A-6C14-4A60-A74A-078829B5EC84}.Release|x86.ActiveCfg = Release|x86
+		{CF5E357A-6C14-4A60-A74A-078829B5EC84}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal

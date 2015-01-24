@@ -1,0 +1,12 @@
+﻿<Properties StartupItem="HelloNUnit\HelloNUnit.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="HelloNUnit\Test.cs">
+    <Files>
+      <File FileName="HelloNUnit\Test.cs" Line="4" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
