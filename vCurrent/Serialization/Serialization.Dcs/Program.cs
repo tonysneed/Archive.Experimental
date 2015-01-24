@@ -48,6 +48,9 @@
         private static void NoSettings()
         {
             var settings = new DataContractSerializerSettings();
+            var dictionary = new XmlDictionary();
+            settings.RootName = dictionary.Add(string.Empty);
+            settings.RootNamespace = dictionary.Add(string.Empty);
 
             //var input = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
             //    "<DummyClass><SampleInt>1</SampleInt></DummyClass>";
