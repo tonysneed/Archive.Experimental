@@ -1,10 +1,9 @@
-﻿namespace Serialization.Dcs
-{
-    using System;
-    using System.IO;
-    using System.Runtime.Serialization;
-    using System.Text;
+﻿using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
 
+namespace Serialization.Shared
+{
     public static class Utilities
     {
         public static string Serialize<TContract>(TContract obj, DataContractSerializerSettings settings)

@@ -1,11 +1,11 @@
-﻿namespace Serialization.Dcs
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Data;
-    using System.Runtime.Serialization;
-    using System.Xml;
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+using System.Xml;
+using Serialization.Shared;
 
+namespace Serialization.Dcs
+{
     class Program
     {
         static void Main(string[] args)
